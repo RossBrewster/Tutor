@@ -1,0 +1,83 @@
+# IDE and editor files
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+*.swp
+
+# Python-related files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.egg
+
+# Node.js-related files
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnp/
+.pnp.js
+*.tgz
+.npm
+.yarn-integrity
+.env
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs and databases
+*.log
+*.sqlite
+
+# Configuration files containing sensitive information
+.env
+*.cfg
+*.ini
+
+# Compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+
+# Backup files
+*.bak
+*.swp
+*.swo
+
+# Other generated files
+.cache/
+.pytest_cache/
+.coverage
+.coverage.*
+coverage.xml
+*.cover
+*.pot
+*.mo
+*.po
+*.prof
+*.seed
+*.pid
+*.lock
+*.egg-info
+
+# Miscellaneous
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+*.orig
