@@ -31,5 +31,5 @@ app.get('/chaining', async (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Server is running on port ${port}`);
+  console.log(`Express server is running on port ${port}`);
 });
