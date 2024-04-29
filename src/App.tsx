@@ -44,45 +44,48 @@ function App() {
   };
 
   return (
-    <div className="p-4">
-      <div className="flex flex-col space-y-2">
-        {messages.map((msg, index) => {
-          if (msg.sender === 'client')
-            return (
-              <div key={index} className="max-w-xs md:max-w-md bg-green-200 p-2 rounded">
-                {msg.text}
-              </div>
-            );
-          else
-            return (
-              <div key={index} className="max-w-xs md:max-w-md bg-blue-200 p-2 rounded">
-                {msg.text}
-              </div>
-            );
-        })}
-      </div>
-      <div className="flex mt-4">
-        <input
-          className="flex-1 border-2 border-gray-300 p-2 rounded-l"
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
-        />
+    <div className = "flex flex-col justify-end w-full items-center bg-yellow-100 min-h-screen">
+      <div className="p-4 bg-gray-400 rounded-2xl m-20 max-w-lg">
+        {messages.length != 0 && <div className="flex flex-col space-y-2 bg-gray-800 p-4 rounded-lg">
+          {messages.map((msg, index) => {
+            if (msg.sender === 'client')
+              return (
+                <div key={index} className="max-w-xs md:max-w-md bg-green-200 p-2 rounded text-black ml-auto">
+                  {msg.text}
+                </div>
+              );
+            else
+              return (
+                <div key={index} className="max-w-xs md:max-w-md bg-blue-200 p-2 rounded text-black mr-auto">
+                  {msg.text}
+                </div>
+              );
+          })}
+        </div>}
+        <div className="flex mt-4">
+          <input
+            className="flex-1 border-2 border-gray-800 p-2 rounded-lg "
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            onKeyDown={(e) => e.key === 'Enter' && sendMessage()}
+          />
+          <button
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold ml-4 py-2 px-4"
+            onClick={sendMessage}
+          >
+            Send
+          </button>
+        </div>
         <button
-          className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-l"
-          onClick={sendMessage}
+          className="hidden mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+          onClick={handleDisconnect}
+          disabled={!isConnected}
         >
-          Send
+          Disconnect
         </button>
       </div>
-      <button
-        className="mt-4 bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-        onClick={handleDisconnect}
-        disabled={!isConnected}
-      >
-        Disconnect
-      </button>
     </div>
+    
   );
 }
 
