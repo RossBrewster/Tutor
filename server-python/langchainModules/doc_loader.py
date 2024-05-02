@@ -21,7 +21,7 @@ llm = ChatOpenAI(api_key=api_key)
 
 
 # load the document
-loader = WebBaseLoader("https://docs.smith.langchain.com/user_guide")
+loader = WebBaseLoader("https://www.futurelearn.com/info/courses/clinical-supervision-teaching-facilitating/0/steps/31910#:~:text=A%20lesson%20plan%20traditionally%20includes,engage%20and%20assess%20the%20learners.")
 
 docs = loader.load()
 
